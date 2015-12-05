@@ -1,0 +1,29 @@
+# Maintainer: Nimbusoft Ltd <opensource@nimbusoft.co.uk>
+
+pkgname=eloquent-ui
+pkgver=1.0
+pkgrel=1
+pkgdesc="A flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell. Latest commit from Github."
+arch=('any')
+url="https://github.com/eloquentos/UI"
+license=('GPL3')
+groups=('themes')
+depends=('gtk3' 'gtk-engine-murrine' 'gnome-themes-standard')
+makedepends=('git')
+source=(${pkgname}::"git+https://github.com/eloquentos/UI.git")
+md5sums=('SKIP')
+
+pkgver() {
+	cd "${srcdir}/${pkgname}"
+	git fetch --tags
+	printf "%s.r%s" "$(git describe --tags `git rev-list --tags --max-count=1`)" "$(git rev-list --count HEAD)"
+}
+
+build() {
+	cd "${srcdir}/${pkgname}"
+	./autogen.sh --prefix=/usr
+}
+
+package() {
+	make -C "${srcdir}/${pkgname}" DESTDIR="${pkgdir}" install
+}
