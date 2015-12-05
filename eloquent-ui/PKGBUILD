@@ -3,14 +3,14 @@
 pkgname=eloquent-ui
 pkgver=1.0
 pkgrel=1
-pkgdesc="A flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell. Latest commit from Github."
+pkgdesc="Eloquent user interface for GNOME 3."
 arch=('any')
-url="https://github.com/eloquentos/UI"
+url="https://github.com/eloquentos/ui"
 license=('GPL3')
 groups=('themes')
 depends=('gtk3' 'gtk-engine-murrine' 'gnome-themes-standard')
 makedepends=('git')
-source=(${pkgname}::"git+https://github.com/eloquentos/UI.git")
+source=(${pkgname}::"git+https://github.com/eloquentos/ui.git")
 md5sums=('SKIP')
 
 pkgver() {
