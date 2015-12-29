@@ -1,0 +1,25 @@
+# Maintainer: XZS <d dot f dot fischer at web dot de>
+# Contributor: Morris Jobke <hey at morrisjobke dot de>
+# Contributor: alucryd <alucryd at gmail dot com>
+
+pkgname=gnome-shell-extension-mediaplayer
+pkgver=r519
+pkgrel=1
+pkgdesc='A mediaplayer indicator for the Gnome Shell'
+arch=('any')
+url='https://github.com/eonpatapon/gnome-shell-extensions-mediaplayer'
+license=('GPL2')
+makedepends=('gnome-common' 'intltool')
+install=gschemas.install
+
+build() {
+  cd "$_gitname"
+  ./autogen.sh
+  ./configure --prefix='/usr' --disable-schemas-compile
+  make
+}
+
+package_01_make_install() {
+  cd "$_gitname"
+  make DESTDIR="${pkgdir}" install
+}
