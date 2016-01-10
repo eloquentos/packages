@@ -1,4 +1,4 @@
-# App Build Scripts
+# System PKGBUILD Scripts
 
 Copyright (c) 2016 Nimbusoft Ltd
 
