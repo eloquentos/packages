@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -rf ./build
 rm -rf /tmp/packages
 mkdir /tmp/packages
 
