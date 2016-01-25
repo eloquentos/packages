@@ -18,7 +18,8 @@ makedepends=('linux-headers')
 
 source=('modprobe.d'
         'license.patch'
-	'wl_linux.c.patch'
+        'wl_linux.c.patch'
+        '002-rdtscl.patch'
 )
 source_i686=("http://www.broadcom.com/docs/linux_sta/hybrid-v35-nodebug-pcoem-${pkgver//./_}.tar.gz")
 source_x86_64=("http://www.broadcom.com/docs/linux_sta/hybrid-v35_64-nodebug-pcoem-${pkgver//./_}.tar.gz")
@@ -36,6 +37,7 @@ _kernver="$(</usr/lib/modules/extramodules-"$_kernmajor"-ARCH/version)"
 prepare() {
   patch -p1 -i license.patch
   patch -p1 -i wl_linux.c.patch
+  patch -p1 < 002-rdtscl.patch
 
   sed -e "/BRCM_WLAN_IFNAME/s:eth:wlan:" \
       -i src/wl/sys/wl_linux.c
