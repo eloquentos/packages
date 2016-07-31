@@ -5,6 +5,6 @@ services:
 
 before_install:
     - docker pull pritunl/archlinux
-    - docker run --name eloquentos -itd --privileged -v ${PWD}:/mnt pritunl/archlinux /bin/bash
+    - docker run --name eloquentos -itd -v ${PWD}:/mnt pritunl/archlinux /bin/bash
 
 script: docker exec eloquentos /bin/sh -c "cd /mnt && ./build.sh"
