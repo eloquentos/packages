@@ -8,7 +8,7 @@ before_install:
     - sudo chown 1000:1000 -R ${PWD}
     - docker run --name eloquentos -itd -v ${PWD}:/mnt pritunl/archlinux /bin/bash
     - docker exec eloquentos pacman -S sudo --noconfirm
-    - docker run exec eloquentos "echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/wheel"
+    - docker exec eloquentos "echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/wheel"
     - docker exec eloquentos /bin/sh -c "useradd eloquentos"
 
 script: docker exec -u eloquentos eloquentos /bin/sh -c "cd /mnt && ./build.sh"
