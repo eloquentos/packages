@@ -7,7 +7,7 @@ mkdir /tmp/packages
 for i in * ; do
     if [ -d "$i" ]; then
         cd $i
-        makepkg -C -f -s -r --sign --noconfirm
+        makepkg -C -f -s -r --sign --key="/mnt/sign-key" --noconfirm
         mv *.pkg.* /tmp/packages
         cd ..
     fi
