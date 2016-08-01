@@ -1,7 +1,7 @@
 sudo: required
 
 services:
-  - docker
+    - docker
 
 before_install:
     - docker pull pritunl/archlinux
@@ -10,3 +10,11 @@ before_install:
     - docker exec eloquentos /bin/sh -c "cd /mnt && ./travis.sh"
 
 script: docker exec -u eloquentos eloquentos /bin/sh -c "cd /mnt && ./build.sh"
+
+deploy:
+    provider: releases
+    api_key:
+        secure: TbkqTKOrISNhixCINNvhoGkSrtYDjKusxjZopkmJfkZA6cMDzbF7WekDVlOi85MNw6sCOhGsbrj8tUMZ8lh2JofS+kWdXU+FihImSzt5bUJ/Ct1NKrKXtuzD0wpV9iYCns55HHPsKJCkwL423KEb2nRegPputB5HHEepuwP+6EdaBSGTzRMX7ZFtsVIMkwElZiZIhiCU6j8M0MLkQA+rzN+ZjOenZqIDgO8DwnUSNOr/lHfrDB5Fghkt7XjNLr8WiXDbWQcjqNgMPOIQKNbsypzcOw4dM+U8twe4qqaAV0Q0hNxIMiDphza3VTUelBnl7ru2irQsGA6jqm3Ro0AuNQYY1OutlheO4tr+PZ+9o4A+UYvSZHSwUj+wR5yVUei4KVEK+x/O6FLWu49snZOGyMeNAt3/lbfYWsiChTh5FMWV9Fkt6MmOas8mWwxwZYCx9x+eZvkVP5JUkaKNoxCas6gbYln+3cXi4S17qzY/rVzEqP/Lj08ij+0My+ywy85k9xxk+BdbNpuJeb+mJiRW9Aw2EMiLT7LcKVaJMOMN+cicb5oxL15MbfC4Hbh3KlASUcPG6hQgsdQ4zmhVNxCRfiopYHY5kQlRCA6T2h2pqCXItiI9Blo7Vopt9szWjP0SjM9wLJqN8StzVRsVvpHhddfVTR5KPGOrS1e2IklDHf8=
+    file: packages.tar.gz
+    on:
+        tags: true
