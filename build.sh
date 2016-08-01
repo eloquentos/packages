@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf ./build
+rm -rf ./packages
 rm -rf /tmp/packages
 mkdir /tmp/packages
 
@@ -13,4 +13,6 @@ for i in * ; do
     fi
 done
 
-mv /tmp/packages ./build
+mv /tmp/packages ./packages
+
+tar -zcvf packages.tar.gz packages
