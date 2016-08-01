@@ -2,4 +2,4 @@
 
 cd ../plymouth
 
-makepkg -i
+makepkg -i -C -f -s -r
