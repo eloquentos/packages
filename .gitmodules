@@ -4,3 +4,6 @@
 [submodule "gdm-plymouth"]
 	path = gdm-plymouth
 	url = https://aur.archlinux.org/gdm-plymouth.git/
+[submodule "gnome-shell-extension-dash-to-dock"]
+	path = gnome-shell-extension-dash-to-dock
+	url = https://aur.archlinux.org/gnome-shell-extension-dash-to-dock.git/
