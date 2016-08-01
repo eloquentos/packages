@@ -5,6 +5,7 @@ services:
 
 before_install:
     - docker pull pritunl/archlinux
+    - ls -la
     - sudo chown 1000:1000 -R ${PWD}
     - docker run --name eloquentos -itd -v ${PWD}:/mnt pritunl/archlinux /bin/bash
     - docker exec eloquentos /bin/sh -c "cd /mnt && ./travis.sh"
