@@ -12,7 +12,7 @@ before_install:
 
 script: docker exec -u eloquentos eloquentos /bin/sh -c "cd /mnt && ./build.sh"
 
-after_script:
+after_success:
     - sudo chown travis:travis -R ${PWD}
     - ls -la
 
