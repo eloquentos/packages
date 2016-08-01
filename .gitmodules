@@ -7,3 +7,6 @@
 [submodule "gnome-shell-extension-dash-to-dock"]
 	path = gnome-shell-extension-dash-to-dock
 	url = https://aur.archlinux.org/gnome-shell-extension-dash-to-dock.git/
+[submodule "flatplat-theme"]
+	path = flatplat-theme
+	url = https://aur.archlinux.org/flatplat-theme.git/
