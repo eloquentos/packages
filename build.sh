@@ -7,7 +7,7 @@ mkdir /tmp/packages
 for i in * ; do
     if [ -d "$i" ]; then
         cd $i
-        makepkg -C -f -s -r --sign --key="support@nimbusoft.co.uk" --noconfirm
+        makepkg -C -f -s -r --nosign --noconfirm
         mv *.pkg.* /tmp/packages
         cd ..
     fi
