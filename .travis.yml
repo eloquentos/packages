@@ -9,8 +9,8 @@ before_install:
     - docker pull pritunl/archlinux
     - sudo chown 1000:1000 -R ${PWD}
     - docker run --name eloquentos -itd -v ${PWD}:/mnt pritunl/archlinux /bin/bash
-    - docker exec eloquentos /bin/sh -c "gpg --allow-secret-key-import --import /mnt/sign-key"
     - docker exec eloquentos /bin/sh -c "cd /mnt && ./travis.sh"
+    - docker exec -u eloquentos eloquentos /bin/sh -c "gpg --allow-secret-key-import --import /mnt/sign-key"
 
 script: docker exec -u eloquentos eloquentos /bin/sh -c "cd /mnt && ./build.sh"
 
