@@ -6,6 +6,10 @@ mkdir /tmp/packages
 
 for i in * ; do
     if [ -d "$i" ]; then
+        if [ -a "scripts/$i" ]; then
+            scripts/${i}
+        fi
+
         cd $i
         makepkg -C -f -s -r --sign --key eloquentos@nimbusoft.co.uk --noconfirm
         mv *.pkg.* /tmp/packages
