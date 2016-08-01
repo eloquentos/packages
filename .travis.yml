@@ -4,13 +4,16 @@ services:
     - docker
 
 before_install:
-    - docker pull pritunl/archlinux
     - ls -la
+    - docker pull pritunl/archlinux
     - sudo chown 1000:1000 -R ${PWD}
     - docker run --name eloquentos -itd -v ${PWD}:/mnt pritunl/archlinux /bin/bash
     - docker exec eloquentos /bin/sh -c "cd /mnt && ./travis.sh"
 
 script: docker exec -u eloquentos eloquentos /bin/sh -c "cd /mnt && ./build.sh"
+
+after_script:
+    - sudo chown travis:travis -R ${PWD}
 
 deploy:
     provider: releases
