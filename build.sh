@@ -14,5 +14,6 @@ for i in * ; do
 done
 
 mv /tmp/packages ./packages
+repo-add -s -k eloquentos@nimbusoft.co.uk packages/stable.db.tar.xz packages/*.tar.xz
 
 tar -zcvf packages.tar.gz packages
