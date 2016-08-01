@@ -14,6 +14,7 @@ script: docker exec -u eloquentos eloquentos /bin/sh -c "cd /mnt && ./build.sh"
 
 after_script:
     - sudo chown travis:travis -R ${PWD}
+    - ls -la
 
 deploy:
     provider: releases
