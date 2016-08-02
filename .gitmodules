@@ -10,3 +10,6 @@
 [submodule "flatplat-theme"]
 	path = flatplat-theme
 	url = https://aur.archlinux.org/flatplat-theme.git/
+[submodule "paper-icon-theme-git"]
+	path = paper-icon-theme-git
+	url = https://aur.archlinux.org/paper-icon-theme-git.git/
