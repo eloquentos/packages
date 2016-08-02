@@ -7,8 +7,9 @@ fi
 
 sshpass -e sftp -oBatchMode=no -oStrictHostKeyChecking=no -b - nimbusoft@frs.sourceforge.net << !
    cd /home/pfs/project/eloquentos/packages/testing
+   put packages.tar.gz new.tar.gz
    rm old.tar.gz
    rename current.tar.gz old.tar.gz
-   put packages.tar.gz current.tar.gz
+   rename new.tar.gz current.tar.gz
    bye
 !
