@@ -13,3 +13,6 @@
 [submodule "paper-icon-theme-git"]
 	path = paper-icon-theme-git
 	url = https://aur.archlinux.org/paper-icon-theme-git.git/
+[submodule "gnome-shell-extension-workspaces-to-dock"]
+	path = gnome-shell-extension-workspaces-to-dock
+	url = https://aur.archlinux.org/gnome-shell-extension-workspaces-to-dock.git/
